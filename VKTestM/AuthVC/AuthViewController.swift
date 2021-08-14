@@ -14,7 +14,7 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        authService = AuthSerivce()
+        authService = SceneDelegate.shared().authService
     }
     
     @IBAction func signInVK(_ sender: UIButton) {
