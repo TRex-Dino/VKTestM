@@ -1,0 +1,6 @@
+framework module Pods_VKTestM {
+  umbrella header "Pods-VKTestM-umbrella.h"
+
+  export *
+  module * { export * }
+}
