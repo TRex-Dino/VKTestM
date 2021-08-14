@@ -8,8 +8,8 @@
 import UIKit
 import VK_ios_sdk
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
+   
     var window: UIWindow?
     var authService: AuthSerivce!
 
@@ -18,6 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         authService = AuthSerivce()
+        authService.delegate = self
         let authVC = UIStoryboard(name: "AuthViewController", bundle: nil).instantiateInitialViewController() as? AuthViewController
         window?.rootViewController = authVC
         window?.makeKeyAndVisible()
@@ -56,7 +57,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
+    
+    //MARK: - AuthServiceDelegate
+    func authServiceShouldShow(viewController: UIViewController) {
+        print(#function)
+    }
+    
+    func authServiceSignIn() {
+        print(#function)
+    }
+    
+    func authServiceSignInDidFail() {
+        print(#function)
+    }
 }
 
