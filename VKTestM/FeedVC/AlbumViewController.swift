@@ -9,22 +9,47 @@ import UIKit
 
 class AlbumViewController: UICollectionViewController {
     
-    private let networkService = NetworkService()
+    private let reuseIdentifier = "cell"
+    private var dataFetcher = NetworkDataFetcher(networking: NetworkService())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemBlue
-        let params = ["owner_id": API.ownerId, "album_id": API.albumId]
-        networkService.request(path: API.albumPhotos,
-                               params: params) { data, error in
-            if let error = error {
-                print("Error received requesting data: \(error.localizedDescription)")
+        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        dataFetcher.getPhotos { photos in
+            guard let album = photos else { return }
+            album.items.map { photosItem in
+                print(photosItem)
+                print(photosItem.id)
+                
             }
-            
-            guard let data = data else { return }
-            let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            print("json \(json!)")
         }
     }
 }
+
+extension AlbumViewController {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        cell.backgroundColor = .red
+    
+        // Configure the cell
+    
+        return cell
+    }
+}
+
+/*
+ 1. show photos in album
+ 2. show single photo for another screen
+ 3.
+ */

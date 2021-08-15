@@ -18,6 +18,8 @@
 		0A231BD026C84FE800810744 /* AlbumViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A231BCF26C84FE800810744 /* AlbumViewController.storyboard */; };
 		0A231BD426C8562C00810744 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A231BD326C8562C00810744 /* NetworkService.swift */; };
 		0A231BD626C8572400810744 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A231BD526C8572400810744 /* API.swift */; };
+		0A43FD2F26C9A4FD0052856E /* AlbumResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A43FD2E26C9A4FD0052856E /* AlbumResponse.swift */; };
+		0A43FD3326C9A6130052856E /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A43FD3226C9A6130052856E /* NetworkDataFetcher.swift */; };
 		E679AD10FBAE98F549C91CF2 /* Pods_VKTestM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34419E31E1216A6019F5E13B /* Pods_VKTestM.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		0A231BCF26C84FE800810744 /* AlbumViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlbumViewController.storyboard; sourceTree = "<group>"; };
 		0A231BD326C8562C00810744 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0A231BD526C8572400810744 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		0A43FD2E26C9A4FD0052856E /* AlbumResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumResponse.swift; sourceTree = "<group>"; };
+		0A43FD3226C9A6130052856E /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		34419E31E1216A6019F5E13B /* Pods_VKTestM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKTestM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		367AD346E1F4675B9E0AE7AA /* Pods-VKTestM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKTestM.debug.xcconfig"; path = "Target Support Files/Pods-VKTestM/Pods-VKTestM.debug.xcconfig"; sourceTree = "<group>"; };
 		39DF67D0F68B5BA8BAC1D3B8 /* Pods-VKTestM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKTestM.release.xcconfig"; path = "Target Support Files/Pods-VKTestM/Pods-VKTestM.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,9 +108,8 @@
 		0A231BCA26C83C7000810744 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				0A231BC626C83A5E00810744 /* AuthSerivce.swift */,
-				0A231BD326C8562C00810744 /* NetworkService.swift */,
-				0A231BD526C8572400810744 /* API.swift */,
+				0A43FD3026C9A5910052856E /* Model */,
+				0A43FD3126C9A5C30052856E /* Networking */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -127,6 +130,25 @@
 				0A231BCB26C83CB100810744 /* AuthViewController.storyboard */,
 			);
 			path = AuthVC;
+			sourceTree = "<group>";
+		};
+		0A43FD3026C9A5910052856E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A231BD526C8572400810744 /* API.swift */,
+				0A43FD2E26C9A4FD0052856E /* AlbumResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A43FD3126C9A5C30052856E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0A231BC626C83A5E00810744 /* AuthSerivce.swift */,
+				0A43FD3226C9A6130052856E /* NetworkDataFetcher.swift */,
+				0A231BD326C8562C00810744 /* NetworkService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		593E7F1F26E4415092580A43 /* Pods */ = {
@@ -267,6 +289,8 @@
 				0A231BB326C8342700810744 /* SceneDelegate.swift in Sources */,
 				0A231BD426C8562C00810744 /* NetworkService.swift in Sources */,
 				0A231BC726C83A5E00810744 /* AuthSerivce.swift in Sources */,
+				0A43FD3326C9A6130052856E /* NetworkDataFetcher.swift in Sources */,
+				0A43FD2F26C9A4FD0052856E /* AlbumResponse.swift in Sources */,
 				0A231BD626C8572400810744 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
