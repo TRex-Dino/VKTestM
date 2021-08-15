@@ -20,6 +20,7 @@
 		0A231BD626C8572400810744 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A231BD526C8572400810744 /* API.swift */; };
 		0A43FD2F26C9A4FD0052856E /* AlbumResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A43FD2E26C9A4FD0052856E /* AlbumResponse.swift */; };
 		0A43FD3326C9A6130052856E /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A43FD3226C9A6130052856E /* NetworkDataFetcher.swift */; };
+		0A43FD3626C9AB760052856E /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A43FD3526C9AB760052856E /* PhotoCell.swift */; };
 		E679AD10FBAE98F549C91CF2 /* Pods_VKTestM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34419E31E1216A6019F5E13B /* Pods_VKTestM.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		0A231BD526C8572400810744 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		0A43FD2E26C9A4FD0052856E /* AlbumResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumResponse.swift; sourceTree = "<group>"; };
 		0A43FD3226C9A6130052856E /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		0A43FD3526C9AB760052856E /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		34419E31E1216A6019F5E13B /* Pods_VKTestM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKTestM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		367AD346E1F4675B9E0AE7AA /* Pods-VKTestM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKTestM.debug.xcconfig"; path = "Target Support Files/Pods-VKTestM/Pods-VKTestM.debug.xcconfig"; sourceTree = "<group>"; };
 		39DF67D0F68B5BA8BAC1D3B8 /* Pods-VKTestM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKTestM.release.xcconfig"; path = "Target Support Files/Pods-VKTestM/Pods-VKTestM.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,11 +79,10 @@
 		0A231BAF26C8342700810744 /* VKTestM */ = {
 			isa = PBXGroup;
 			children = (
-				0A231BD126C8508500810744 /* FeedVC */,
-				0A231BD226C8509000810744 /* AuthVC */,
+				0A231BD126C8508500810744 /* Controllers */,
+				0A231BD226C8509000810744 /* Storyboards */,
 				0A231BC426C8380D00810744 /* SupprotingFiles */,
 				0A231BC526C838CB00810744 /* Resources */,
-				0A231BBB26C8342800810744 /* LaunchScreen.storyboard */,
 				0A231BCA26C83C7000810744 /* Services */,
 			);
 			path = VKTestM;
@@ -114,22 +115,24 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		0A231BD126C8508500810744 /* FeedVC */ = {
+		0A231BD126C8508500810744 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0A43FD3426C9AB590052856E /* Cell */,
+				0A231BC826C83C6200810744 /* AuthViewController.swift */,
 				0A231BCD26C84FDE00810744 /* AlbumViewController.swift */,
-				0A231BCF26C84FE800810744 /* AlbumViewController.storyboard */,
 			);
-			path = FeedVC;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		0A231BD226C8509000810744 /* AuthVC */ = {
+		0A231BD226C8509000810744 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				0A231BC826C83C6200810744 /* AuthViewController.swift */,
 				0A231BCB26C83CB100810744 /* AuthViewController.storyboard */,
+				0A231BCF26C84FE800810744 /* AlbumViewController.storyboard */,
+				0A231BBB26C8342800810744 /* LaunchScreen.storyboard */,
 			);
-			path = AuthVC;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		0A43FD3026C9A5910052856E /* Model */ = {
@@ -149,6 +152,14 @@
 				0A231BD326C8562C00810744 /* NetworkService.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		0A43FD3426C9AB590052856E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0A43FD3526C9AB760052856E /* PhotoCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		593E7F1F26E4415092580A43 /* Pods */ = {
@@ -289,6 +300,7 @@
 				0A231BB326C8342700810744 /* SceneDelegate.swift in Sources */,
 				0A231BD426C8562C00810744 /* NetworkService.swift in Sources */,
 				0A231BC726C83A5E00810744 /* AuthSerivce.swift in Sources */,
+				0A43FD3626C9AB760052856E /* PhotoCell.swift in Sources */,
 				0A43FD3326C9A6130052856E /* NetworkDataFetcher.swift in Sources */,
 				0A43FD2F26C9A4FD0052856E /* AlbumResponse.swift in Sources */,
 				0A231BD626C8572400810744 /* API.swift in Sources */,
