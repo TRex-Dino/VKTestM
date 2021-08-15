@@ -14,8 +14,8 @@
 		0A231BC726C83A5E00810744 /* AuthSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A231BC626C83A5E00810744 /* AuthSerivce.swift */; };
 		0A231BC926C83C6200810744 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A231BC826C83C6200810744 /* AuthViewController.swift */; };
 		0A231BCC26C83CB100810744 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A231BCB26C83CB100810744 /* AuthViewController.storyboard */; };
-		0A231BCE26C84FDE00810744 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A231BCD26C84FDE00810744 /* FeedViewController.swift */; };
-		0A231BD026C84FE800810744 /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A231BCF26C84FE800810744 /* FeedViewController.storyboard */; };
+		0A231BCE26C84FDE00810744 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A231BCD26C84FDE00810744 /* AlbumViewController.swift */; };
+		0A231BD026C84FE800810744 /* AlbumViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A231BCF26C84FE800810744 /* AlbumViewController.storyboard */; };
 		0A231BD426C8562C00810744 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A231BD326C8562C00810744 /* NetworkService.swift */; };
 		0A231BD626C8572400810744 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A231BD526C8572400810744 /* API.swift */; };
 		E679AD10FBAE98F549C91CF2 /* Pods_VKTestM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34419E31E1216A6019F5E13B /* Pods_VKTestM.framework */; };
@@ -31,8 +31,8 @@
 		0A231BC626C83A5E00810744 /* AuthSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSerivce.swift; sourceTree = "<group>"; };
 		0A231BC826C83C6200810744 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		0A231BCB26C83CB100810744 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
-		0A231BCD26C84FDE00810744 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		0A231BCF26C84FE800810744 /* FeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedViewController.storyboard; sourceTree = "<group>"; };
+		0A231BCD26C84FDE00810744 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		0A231BCF26C84FE800810744 /* AlbumViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlbumViewController.storyboard; sourceTree = "<group>"; };
 		0A231BD326C8562C00810744 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0A231BD526C8572400810744 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		34419E31E1216A6019F5E13B /* Pods_VKTestM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKTestM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,8 +114,8 @@
 		0A231BD126C8508500810744 /* FeedVC */ = {
 			isa = PBXGroup;
 			children = (
-				0A231BCD26C84FDE00810744 /* FeedViewController.swift */,
-				0A231BCF26C84FE800810744 /* FeedViewController.storyboard */,
+				0A231BCD26C84FDE00810744 /* AlbumViewController.swift */,
+				0A231BCF26C84FE800810744 /* AlbumViewController.storyboard */,
 			);
 			path = FeedVC;
 			sourceTree = "<group>";
@@ -208,7 +208,7 @@
 				0A231BBD26C8342800810744 /* LaunchScreen.storyboard in Resources */,
 				0A231BCC26C83CB100810744 /* AuthViewController.storyboard in Resources */,
 				0A231BBA26C8342800810744 /* Assets.xcassets in Resources */,
-				0A231BD026C84FE800810744 /* FeedViewController.storyboard in Resources */,
+				0A231BD026C84FE800810744 /* AlbumViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +263,7 @@
 			files = (
 				0A231BC926C83C6200810744 /* AuthViewController.swift in Sources */,
 				0A231BB126C8342700810744 /* AppDelegate.swift in Sources */,
-				0A231BCE26C84FDE00810744 /* FeedViewController.swift in Sources */,
+				0A231BCE26C84FDE00810744 /* AlbumViewController.swift in Sources */,
 				0A231BB326C8342700810744 /* SceneDelegate.swift in Sources */,
 				0A231BD426C8562C00810744 /* NetworkService.swift in Sources */,
 				0A231BC726C83A5E00810744 /* AuthSerivce.swift in Sources */,

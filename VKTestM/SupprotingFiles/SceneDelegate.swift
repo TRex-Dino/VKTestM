@@ -59,8 +59,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
     
     func authServiceSignIn() {
         print(#function)
-        let feedVC = UIStoryboard(name: "FeedViewController", bundle: nil).instantiateInitialViewController() as! FeedViewController
-        let navVC = UINavigationController(rootViewController: feedVC)
+        guard let albumVC = UIStoryboard(name: "AlbumViewController", bundle: nil).instantiateInitialViewController() as? AlbumViewController else { return }
+        
+        let navVC = UINavigationController(rootViewController: albumVC)
         window?.rootViewController = navVC
         
     }

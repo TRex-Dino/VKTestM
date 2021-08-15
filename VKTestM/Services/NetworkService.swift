@@ -48,7 +48,7 @@ final class NetworkService: Networking {
         
         components.scheme = API.shceme
         components.host = API.host
-        components.path = API.newsFeed
+        components.path = API.albumPhotos
         components.queryItems = params.map {
             URLQueryItem(name: $0, value: $1)
         }
