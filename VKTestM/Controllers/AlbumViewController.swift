@@ -40,9 +40,6 @@ extension AlbumViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        cell.backgroundColor = .red
-    
-        // Configure the cell
     
         return cell
     }
@@ -51,5 +48,6 @@ extension AlbumViewController {
 /*
  1. show photos in album
  2. show single photo for another screen
- 3.
+ 3. fetch photo
+ 4. add section with width and hieght
  */
