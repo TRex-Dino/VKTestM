@@ -17,6 +17,13 @@ class AlbumViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Mobile Up Gallery"
+        
+        let exitButton = UIBarButtonItem(title: "Выход", style: .plain, target: nil, action: nil)
+        exitButton.tintColor = .black
+        
+        self.navigationItem.rightBarButtonItem = exitButton
     }
 }
 
