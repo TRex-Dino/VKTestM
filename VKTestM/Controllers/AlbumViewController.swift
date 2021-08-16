@@ -13,7 +13,7 @@ class AlbumViewController: UICollectionViewController {
     private var dataFetcher = NetworkDataFetcher(networking: NetworkService())
     
     private let itemsPerRow: CGFloat = 2
-    private let sectionInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+    private let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 2, right: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +56,7 @@ extension AlbumViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let paddingWidth = sectionInsets.left * (itemsPerRow + 1)
+        let paddingWidth = sectionInsets.bottom
         let availableWidth = collectionView.frame.width - paddingWidth
         let widthPerItem = availableWidth / itemsPerRow
         return CGSize(width: widthPerItem, height: widthPerItem)
@@ -67,11 +67,11 @@ extension AlbumViewController: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        sectionInsets.left
+        sectionInsets.bottom
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        sectionInsets.left
+        sectionInsets.bottom
     }
 }
 
