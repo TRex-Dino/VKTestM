@@ -13,17 +13,7 @@ class AlbumViewController: UICollectionViewController {
     private var dataFetcher = NetworkDataFetcher(networking: NetworkService())
     
     private let itemsPerRow: CGFloat = 2
-    private let sectionInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-
-        
-//        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-//        layout.itemSize = CGSize(width: 70, height: 30)
-//        layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-//        layout.minimumLineSpacing = 1
-//        layout.minimumInteritemSpacing = 1
-//        layout.scrollDirection = .vertical
-//
-//        collectionView.showsVerticalScrollIndicator = false
+    private let sectionInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,16 +32,15 @@ extension AlbumViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoCell
-        
+//        cell.backgroundColor = .blue
         dataFetcher.getPhotos { photosResponse in
             guard let photosResponse = photosResponse else { return }
             photosResponse.sizes.map { photosUrl in
-                
+
                 guard let url = URL(string: photosUrl.url) else { return }
                 URLSession.shared.dataTask(with: url) { data, response, error in
                     if let data = data, let image = UIImage(data: data) {
                         DispatchQueue.main.async {
-                            cell.photoCell.sizeToFit()
                             cell.photoCell.image = image
                         }
                     }
