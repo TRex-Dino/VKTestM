@@ -61,6 +61,16 @@ extension AlbumViewController {
         
         return cell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photoDetail = PhotoDetailViewController()
+        
+        let cellViewModel = photoViewModel.cells[indexPath.row]
+        let url = cellViewModel.photoUrlString
+        photoDetail.photoURL = url
+        
+        navigationController?.pushViewController(photoDetail, animated: true)
+    }
 }
 
 //MARK: - UICollectionViewDelegateFlowLayout

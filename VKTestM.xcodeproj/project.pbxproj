@@ -23,6 +23,8 @@
 		0A43FD3626C9AB760052856E /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A43FD3526C9AB760052856E /* PhotoCell.swift */; };
 		0A7BE54826CBA0ED009C3A63 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7BE54726CBA0ED009C3A63 /* PhotoViewModel.swift */; };
 		0A7BE54A26CBA1AA009C3A63 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7BE54926CBA1AA009C3A63 /* WebImageView.swift */; };
+		0A7BE55426CBBE14009C3A63 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7BE55226CBBE14009C3A63 /* PhotoDetailViewController.swift */; };
+		0A7BE55526CBBE14009C3A63 /* PhotoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A7BE55326CBBE14009C3A63 /* PhotoDetailViewController.xib */; };
 		E679AD10FBAE98F549C91CF2 /* Pods_VKTestM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34419E31E1216A6019F5E13B /* Pods_VKTestM.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		0A43FD3526C9AB760052856E /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		0A7BE54726CBA0ED009C3A63 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		0A7BE54926CBA1AA009C3A63 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
+		0A7BE55226CBBE14009C3A63 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		0A7BE55326CBBE14009C3A63 /* PhotoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoDetailViewController.xib; sourceTree = "<group>"; };
 		34419E31E1216A6019F5E13B /* Pods_VKTestM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKTestM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		367AD346E1F4675B9E0AE7AA /* Pods-VKTestM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKTestM.debug.xcconfig"; path = "Target Support Files/Pods-VKTestM/Pods-VKTestM.debug.xcconfig"; sourceTree = "<group>"; };
 		39DF67D0F68B5BA8BAC1D3B8 /* Pods-VKTestM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKTestM.release.xcconfig"; path = "Target Support Files/Pods-VKTestM/Pods-VKTestM.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 				0A43FD3426C9AB590052856E /* Cell */,
 				0A231BC826C83C6200810744 /* AuthViewController.swift */,
 				0A231BCD26C84FDE00810744 /* AlbumViewController.swift */,
+				0A7BE55626CBBE1E009C3A63 /* PhotoDetailViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -166,6 +171,15 @@
 				0A7BE54926CBA1AA009C3A63 /* WebImageView.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		0A7BE55626CBBE1E009C3A63 /* PhotoDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0A7BE55226CBBE14009C3A63 /* PhotoDetailViewController.swift */,
+				0A7BE55326CBBE14009C3A63 /* PhotoDetailViewController.xib */,
+			);
+			path = PhotoDetailViewController;
 			sourceTree = "<group>";
 		};
 		593E7F1F26E4415092580A43 /* Pods */ = {
@@ -244,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A7BE55526CBBE14009C3A63 /* PhotoDetailViewController.xib in Resources */,
 				0A231BBD26C8342800810744 /* LaunchScreen.storyboard in Resources */,
 				0A231BCC26C83CB100810744 /* AuthViewController.storyboard in Resources */,
 				0A231BBA26C8342800810744 /* Assets.xcassets in Resources */,
@@ -305,6 +320,7 @@
 				0A7BE54826CBA0ED009C3A63 /* PhotoViewModel.swift in Sources */,
 				0A231BB126C8342700810744 /* AppDelegate.swift in Sources */,
 				0A231BCE26C84FDE00810744 /* AlbumViewController.swift in Sources */,
+				0A7BE55426CBBE14009C3A63 /* PhotoDetailViewController.swift in Sources */,
 				0A231BB326C8342700810744 /* SceneDelegate.swift in Sources */,
 				0A231BD426C8562C00810744 /* NetworkService.swift in Sources */,
 				0A231BC726C83A5E00810744 /* AuthSerivce.swift in Sources */,
