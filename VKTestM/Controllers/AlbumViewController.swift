@@ -10,10 +10,11 @@ import UIKit
 class AlbumViewController: UICollectionViewController {
     
     private let reuseIdentifier = "cell"
-    private var dataFetcher = NetworkDataFetcher(networking: NetworkService())
-    private var photoViewModel = PhotoViewModel.init(cells: [])
     
+    private var dataFetcher = NetworkDataFetcher(networking: NetworkService())
     private var authService: AuthService!
+    
+    private var photoViewModel = PhotoViewModel(cells: [])
     
     private let itemsPerRow: CGFloat = 2
     private let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 2, right: 0)
@@ -78,7 +79,7 @@ extension AlbumViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         photoViewModel.cells.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoCell
         
@@ -104,7 +105,7 @@ extension AlbumViewController {
 
 //MARK: - UICollectionViewDelegateFlowLayout
 extension AlbumViewController: UICollectionViewDelegateFlowLayout {
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let paddingWidth = sectionInsets.bottom
@@ -112,15 +113,15 @@ extension AlbumViewController: UICollectionViewDelegateFlowLayout {
         let widthPerItem = availableWidth / itemsPerRow
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         sectionInsets
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         sectionInsets.bottom
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         sectionInsets.bottom
     }

@@ -8,7 +8,7 @@
 import UIKit
 
 class PhotoDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var photoImage: WebImageView!
     
     var photoURL: String?

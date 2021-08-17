@@ -14,8 +14,8 @@ protocol PhotoCellViewModel {
 class PhotoCell: UICollectionViewCell {
     
     @IBOutlet weak var photoCell: WebImageView!
-    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     func setImage(viewModel: PhotoCellViewModel) {
         photoCell.setImageUrl(imageURL: viewModel.photoUrlString)
     }
