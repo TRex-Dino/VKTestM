@@ -27,5 +27,6 @@ class PhotoDetailViewController: UIViewController {
     private func shareButton() {
         let shareButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: nil, action: nil)
         self.navigationItem.rightBarButtonItem = shareButton
+        shareButton.tintColor = .black
     }
 }

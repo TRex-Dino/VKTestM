@@ -49,11 +49,27 @@ class AlbumViewController: UICollectionViewController {
                 let lastItem = urlPhotos.sizes.last
                 guard let url = lastItem?.url else { return }
                 
-                let cell = PhotoViewModel.Cell.init(photoUrlString: url)
+                let date = urlPhotos.date
+                let cell = PhotoViewModel.Cell.init(photoUrlString: url, date: date)
                 self.photoViewModel.cells.append(cell)
                 self.collectionView.reloadData()
             }
         }
+    }
+    
+    private func dateFormatter(viewController: PhotoDetailViewController, cellViewModel: PhotoViewModel.Cell ) {
+        let date = cellViewModel.date
+        let currentDate = Date(timeIntervalSince1970: date)
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+        dateFormatter.dateFormat = "d MMMM YYYY"
+        viewController.navigationItem.title = dateFormatter.string(from: currentDate)
+    }
+    
+    private func backButton() {
+        let backButton = UIBarButtonItem(image: nil, style: .plain, target: nil, action: nil)
+        backButton.tintColor = .black
+        navigationItem.backBarButtonItem = backButton
     }
 }
 
@@ -77,6 +93,8 @@ extension AlbumViewController {
         let cellViewModel = photoViewModel.cells[indexPath.row]
         let url = cellViewModel.photoUrlString
         photoDetail.photoURL = url
+        backButton()
+        dateFormatter(viewController: photoDetail, cellViewModel: cellViewModel)
         
         navigationController?.pushViewController(photoDetail, animated: true)
     }
