@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol PhotoCellViewModel {
+    var photoUrlString: String { get }
+}
+
 class PhotoCell: UICollectionViewCell {
     
-    @IBOutlet weak var photoCell: UIImageView!
+    @IBOutlet weak var photoCell: WebImageView!
+    
+    func setImage(viewModel: PhotoCellViewModel) {
+        photoCell.setImageUrl(imageURL: viewModel.photoUrlString)
+    }
 }
