@@ -34,15 +34,21 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q3w-9Y-du8" customClass="WebImageView" customModule="VKTestM" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         </imageView>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Rok-9b-2di">
+                                            <rect key="frame" x="54" y="54" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Rok-9b-2di" firstAttribute="centerX" secondItem="EOw-xp-gnK" secondAttribute="centerX" id="2H2-hk-LRz"/>
                                         <constraint firstItem="q3w-9Y-du8" firstAttribute="top" secondItem="EOw-xp-gnK" secondAttribute="top" id="C8e-TF-le4"/>
                                         <constraint firstAttribute="trailing" secondItem="q3w-9Y-du8" secondAttribute="trailing" id="PWB-cT-eeg"/>
                                         <constraint firstItem="q3w-9Y-du8" firstAttribute="leading" secondItem="EOw-xp-gnK" secondAttribute="leading" id="f3z-Ko-ueL"/>
                                         <constraint firstAttribute="bottom" secondItem="q3w-9Y-du8" secondAttribute="bottom" id="lzd-Mp-UhA"/>
+                                        <constraint firstItem="Rok-9b-2di" firstAttribute="centerY" secondItem="EOw-xp-gnK" secondAttribute="centerY" id="thh-qh-vnZ"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="Rok-9b-2di" id="0bd-P9-SjF"/>
                                     <outlet property="photoCell" destination="q3w-9Y-du8" id="Jlm-a1-tme"/>
                                 </connections>
                             </collectionViewCell>

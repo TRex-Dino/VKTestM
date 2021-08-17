@@ -81,6 +81,7 @@ extension AlbumViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoCell
+        
         let cellViewModel = photoViewModel.cells[indexPath.row]
         cell.setImage(viewModel: cellViewModel)
         
@@ -92,6 +93,7 @@ extension AlbumViewController {
         
         let cellViewModel = photoViewModel.cells[indexPath.row]
         let url = cellViewModel.photoUrlString
+        
         photoDetail.photoURL = url
         backButton()
         dateFormatter(viewController: photoDetail, cellViewModel: cellViewModel)

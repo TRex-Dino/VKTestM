@@ -17,7 +17,23 @@ class PhotoDetailViewController: UIViewController {
         super.viewDidLoad()
         setPhoto()
         shareButton()
+        
+        addGesture()
     }
+    
+    private func addGesture() {
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(didPinch(_:)))
+        photoImage.isUserInteractionEnabled = true
+        photoImage.addGestureRecognizer(pinchGesture)
+    }
+    
+    @objc private func didPinch(_ gesture: UIPinchGestureRecognizer) {
+        let scaleResult = gesture.view?.transform.scaledBy(x: gesture.scale, y: gesture.scale)
+        guard let scale = scaleResult, scale.a > 1, scale.d > 1 else { return }
+        gesture.view?.transform = scale
+        gesture.scale = 1
+    }
+    
     
     private func setPhoto() {
         guard let photo = photoURL else { return }
