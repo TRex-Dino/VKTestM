@@ -45,7 +45,7 @@ class AlbumViewController: UICollectionViewController {
         dataFetcher.getPhotos { photosResponse in
             guard let photos = photosResponse else { return }
             
-            photos.items.map { urlPhotos in
+            let _ = photos.items.map { urlPhotos in
                 let lastItem = urlPhotos.sizes.last
                 guard let url = lastItem?.url else { return }
                 
@@ -123,10 +123,3 @@ extension AlbumViewController: UICollectionViewDelegateFlowLayout {
         sectionInsets.bottom
     }
 }
-
-/*
- 1. show photos in album
- 2. show single photo for another screen
- 3. fetch photo
- 4. add section with width and hieght
- */

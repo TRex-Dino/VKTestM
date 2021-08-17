@@ -25,8 +25,14 @@ class PhotoDetailViewController: UIViewController {
     }
     
     private func shareButton() {
-        let shareButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: nil, action: nil)
+        let shareButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(loadImage))
         self.navigationItem.rightBarButtonItem = shareButton
         shareButton.tintColor = .black
+    }
+    
+    @objc func loadImage() {
+        guard let image = photoImage.image else { return }
+        let shareController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        present(shareController, animated: true, completion: nil)
     }
 }
