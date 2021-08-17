@@ -13,9 +13,9 @@ protocol Networking {
 
 final class NetworkService: Networking {
     
-    private let authService: AuthSerivce
+    private let authService: AuthService
     
-    init(authService: AuthSerivce = SceneDelegate.shared().authService) {
+    init(authService: AuthService = SceneDelegate.shared().authService) {
         self.authService = authService
     }
     

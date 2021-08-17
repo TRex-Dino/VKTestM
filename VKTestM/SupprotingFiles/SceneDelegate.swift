@@ -11,7 +11,7 @@ import VK_ios_sdk
 class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
    
     var window: UIWindow?
-    var authService: AuthSerivce!
+    var authService: AuthService!
     
     static func shared() -> SceneDelegate {
         let scene = UIApplication.shared.connectedScenes.first
@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        authService = AuthSerivce()
+        authService = AuthService()
         authService.delegate = self
         let authVC = UIStoryboard(name: "AuthViewController", bundle: nil).instantiateInitialViewController() as? AuthViewController
         window?.rootViewController = authVC
@@ -64,6 +64,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
         let navVC = UINavigationController(rootViewController: albumVC)
         window?.rootViewController = navVC
         
+    }
+    
+    func authServiceLogOut() {
+        let authVC = UIStoryboard(name: "AuthViewController", bundle: nil).instantiateInitialViewController() as! AuthViewController
+        window?.rootViewController = authVC
     }
     
     func authServiceSignInDidFail() {

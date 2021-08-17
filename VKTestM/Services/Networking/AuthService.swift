@@ -1,5 +1,5 @@
 //
-//  AuthSerivce.swift
+//  AuthService.swift
 //  VKTestM
 //
 //  Created by Dmitry on 14.08.2021.
@@ -12,9 +12,10 @@ protocol AuthServiceDelegate: AnyObject {
     func authServiceShouldShow(viewController: UIViewController)
     func authServiceSignIn()
     func authServiceSignInDidFail()
+    func authServiceLogOut()
 }
 
-class AuthSerivce: NSObject, VKSdkDelegate, VKSdkUIDelegate {
+class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
    
     private let appId = "7926084"
     private let vkSdk: VKSdk
@@ -48,6 +49,11 @@ class AuthSerivce: NSObject, VKSdkDelegate, VKSdkUIDelegate {
                 delegate?.authServiceSignInDidFail()
             }
         }
+    }
+    
+    func authServiceLogOut() {
+        VKSdk.forceLogout()
+        delegate?.authServiceLogOut()
     }
     
     func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {

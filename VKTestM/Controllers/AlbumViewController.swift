@@ -13,6 +13,8 @@ class AlbumViewController: UICollectionViewController {
     private var dataFetcher = NetworkDataFetcher(networking: NetworkService())
     private var photoViewModel = PhotoViewModel.init(cells: [])
     
+    private var authService: AuthService!
+    
     private let itemsPerRow: CGFloat = 2
     private let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 2, right: 0)
     
@@ -21,15 +23,22 @@ class AlbumViewController: UICollectionViewController {
         
         setupTopBar()
         fetchPhotos()
+        
+        authService = SceneDelegate.shared().authService
     }
     
     private func setupTopBar() {
         title = "Mobile Up Gallery"
         
-        let exitButton = UIBarButtonItem(title: "Выход", style: .plain, target: nil, action: nil)
+        let exitButton = UIBarButtonItem(title: "Выход", style: .plain, target: self, action: #selector(exitButton))
         exitButton.tintColor = .black
         
         self.navigationItem.rightBarButtonItem = exitButton
+    }
+    
+    @objc private func exitButton() {
+        authService.authServiceLogOut()
+        dismiss(animated: true)
     }
     
     private func fetchPhotos() {

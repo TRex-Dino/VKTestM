@@ -9,7 +9,7 @@ import UIKit
 
 class AuthViewController: UIViewController {
     
-    private var authService: AuthSerivce!
+    private var authService: AuthService!
     
     override func viewDidLoad() {
         super.viewDidLoad()
