@@ -9,11 +9,14 @@ import UIKit
 
 class AuthViewController: UIViewController {
     
+    @IBOutlet weak var enterButton: UIButton!
+    
     private var authService: AuthService!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        enterButton.layer.cornerRadius = 10
         authService = SceneDelegate.shared().authService
     }
     

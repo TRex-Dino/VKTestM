@@ -17,7 +17,6 @@ struct PhotosResponse: Decodable {
 
 struct PhotosItem: Decodable {
     let date: Double
-    let id: Int
     let sizes: [PhotosUrl]
 }
 

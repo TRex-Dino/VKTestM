@@ -28,13 +28,27 @@ class AlbumViewController: UICollectionViewController {
         authService = SceneDelegate.shared().authService
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPhoto" {
+            
+            guard let items = collectionView.indexPathsForSelectedItems?.first else { return }
+            guard let item = items.last else { return }
+            let photoVC = segue.destination as! PhotoVC
+            photoVC.photoURL = photoViewModel.cells[item].photoUrlString
+            photoVC.photoDate = photoViewModel.cells[item].date
+        }
+    }
+    
     private func setupTopBar() {
         title = "Mobile Up Gallery"
         
         let exitButton = UIBarButtonItem(title: "Выход", style: .plain, target: self, action: #selector(exitButton))
         exitButton.tintColor = .black
+        navigationItem.rightBarButtonItem = exitButton
         
-        self.navigationItem.rightBarButtonItem = exitButton
+        let backButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        backButton.tintColor = .black
+        navigationItem.backBarButtonItem = backButton
     }
     
     @objc private func exitButton() {
@@ -43,34 +57,19 @@ class AlbumViewController: UICollectionViewController {
     }
     
     private func fetchPhotos() {
-        dataFetcher.getPhotos { photosResponse in
-            guard let photos = photosResponse else { return }
+        dataFetcher.getPhotos { photoResponse in
+            guard let photo = photoResponse else { return }
             
-            let _ = photos.items.map { urlPhotos in
-                let lastItem = urlPhotos.sizes.last
-                guard let url = lastItem?.url else { return }
+            for item in photo.items {
+                let lastItemSize = item.sizes.last
+                guard let url = lastItemSize?.url else { return }
                 
-                let date = urlPhotos.date
-                let cell = PhotoViewModel.Cell.init(photoUrlString: url, date: date)
+                let date = item.date
+                let cell = PhotoViewModel.Cell(photoUrlString: url, date: date)
                 self.photoViewModel.cells.append(cell)
                 self.collectionView.reloadData()
             }
         }
-    }
-    
-    private func dateFormatter(viewController: PhotoDetailViewController, cellViewModel: PhotoViewModel.Cell ) {
-        let date = cellViewModel.date
-        let currentDate = Date(timeIntervalSince1970: date)
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "ru_RU")
-        dateFormatter.dateFormat = "d MMMM YYYY"
-        viewController.navigationItem.title = dateFormatter.string(from: currentDate)
-    }
-    
-    private func backButton() {
-        let backButton = UIBarButtonItem(image: nil, style: .plain, target: nil, action: nil)
-        backButton.tintColor = .black
-        navigationItem.backBarButtonItem = backButton
     }
 }
 
@@ -87,19 +86,6 @@ extension AlbumViewController {
         cell.setImage(viewModel: cellViewModel)
         
         return cell
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let photoDetail = PhotoDetailViewController()
-        
-        let cellViewModel = photoViewModel.cells[indexPath.row]
-        let url = cellViewModel.photoUrlString
-        
-        photoDetail.photoURL = url
-        backButton()
-        dateFormatter(viewController: photoDetail, cellViewModel: cellViewModel)
-        
-        navigationController?.pushViewController(photoDetail, animated: true)
     }
 }
 

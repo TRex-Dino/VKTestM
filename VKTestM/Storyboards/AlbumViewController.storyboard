@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -50,6 +51,7 @@
                                 <connections>
                                     <outlet property="activityIndicator" destination="Rok-9b-2di" id="0bd-P9-SjF"/>
                                     <outlet property="photoCell" destination="q3w-9Y-du8" id="Jlm-a1-tme"/>
+                                    <segue destination="vne-c3-Hxi" kind="show" identifier="showPhoto" id="Onk-la-Bdl"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -62,6 +64,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTR-pk-j4Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-44" y="71"/>
+        </scene>
+        <!--PhotoVC-->
+        <scene sceneID="w8i-jE-B5E">
+            <objects>
+                <viewController id="vne-c3-Hxi" customClass="PhotoVC" customModule="VKTestM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SmA-H1-kQb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qBe-XN-uDv" customClass="WebImageView" customModule="VKTestM" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="244" width="414" height="354"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4Li-aX-a93"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qBe-XN-uDv" firstAttribute="width" secondItem="SmA-H1-kQb" secondAttribute="width" id="19D-Ao-hYk"/>
+                            <constraint firstItem="qBe-XN-uDv" firstAttribute="height" secondItem="SmA-H1-kQb" secondAttribute="height" multiplier="0.42" id="7nl-2w-Edu"/>
+                            <constraint firstItem="qBe-XN-uDv" firstAttribute="centerX" secondItem="SmA-H1-kQb" secondAttribute="centerX" id="D1L-UT-j5t"/>
+                            <constraint firstItem="qBe-XN-uDv" firstAttribute="centerY" secondItem="SmA-H1-kQb" secondAttribute="centerY" id="gyL-Yk-g1I"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4WM-sl-u9M"/>
+                    <connections>
+                        <outlet property="photoImage" destination="qBe-XN-uDv" id="w5F-gj-dvE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fTI-FS-ZW1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="757" y="71"/>
         </scene>
     </scenes>
     <resources>

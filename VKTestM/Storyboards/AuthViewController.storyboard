@@ -51,6 +51,9 @@ Gallery</string>
                             <constraint firstItem="rNW-vm-TM4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="xfU-sE-47b"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="enterButton" destination="rNW-vm-TM4" id="Gkz-2z-qJs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

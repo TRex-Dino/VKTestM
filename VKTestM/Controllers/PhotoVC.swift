@@ -1,24 +1,37 @@
 //
-//  PhotoDetailViewController.swift
+//  PhotoVC.swift
 //  VKTestM
 //
-//  Created by Dmitry on 17.08.2021.
+//  Created by Dmitry on 18.08.2021.
 //
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+
+class PhotoVC: UIViewController {
     
     @IBOutlet weak var photoImage: WebImageView!
     
     var photoURL: String?
+    var photoDate: Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setPhoto()
-        shareButton()
-        
         addGesture()
+        
+        shareButton()
+        dateFormatter()
+        
+    }
+    
+    private func dateFormatter() {
+        guard let date = photoDate else { return }
+        let currentDate = Date(timeIntervalSince1970: date)
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+        dateFormatter.dateFormat = "d MMMM YYYY"
+        title = dateFormatter.string(from: currentDate)
     }
     
     private func addGesture() {

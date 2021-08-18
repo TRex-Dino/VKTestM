@@ -14,6 +14,7 @@ protocol DataFetcher {
 struct NetworkDataFetcher: DataFetcher {
     
     let networking: Networking
+    
     init(networking: Networking) {
         self.networking = networking
     }
