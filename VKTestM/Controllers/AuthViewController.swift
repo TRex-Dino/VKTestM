@@ -17,6 +17,8 @@ class AuthViewController: UIViewController {
         super.viewDidLoad()
         
         enterButton.layer.cornerRadius = 10
+        enterButton.setTitle(LocalizeString.loginTitle.setString, for: .normal)
+        
         authService = SceneDelegate.shared().authService
     }
     

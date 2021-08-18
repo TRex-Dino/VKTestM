@@ -41,12 +41,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
     
     //MARK: - AuthServiceDelegate
     func authServiceShouldShow(viewController: UIViewController) {
-        print(#function)
         window?.rootViewController?.present(viewController, animated: true, completion: nil)
     }
     
     func authServiceSignIn() {
-        print(#function)
         guard let albumVC = UIStoryboard(name: "AlbumViewController", bundle: nil).instantiateInitialViewController() as? AlbumViewController else { return }
         
         let navVC = UINavigationController(rootViewController: albumVC)
@@ -60,7 +58,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
     }
     
     func authServiceSignInDidFail() {
-        print(#function)
+        let ac = UIAlertController(title: LocalizeString.authAlertTitle.setString, message: LocalizeString.authAlertCommit.setString, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        ac.addAction(ok)
+        
+        window?.rootViewController?.present(ac, animated: true)
     }
 }
-

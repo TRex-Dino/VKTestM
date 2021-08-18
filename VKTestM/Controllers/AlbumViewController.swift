@@ -30,19 +30,20 @@ class AlbumViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPhoto" {
-            
             guard let items = collectionView.indexPathsForSelectedItems?.first else { return }
             guard let item = items.last else { return }
-            let photoVC = segue.destination as! PhotoVC
+            guard let photoVC = segue.destination as? PhotoViewController else { return }
+            
             photoVC.photoURL = photoViewModel.cells[item].photoUrlString
             photoVC.photoDate = photoViewModel.cells[item].date
         }
     }
     
+    //MARK: - setupTopBar
     private func setupTopBar() {
         title = "Mobile Up Gallery"
         
-        let exitButton = UIBarButtonItem(title: "Выход", style: .plain, target: self, action: #selector(exitButton))
+        let exitButton = UIBarButtonItem(title: LocalizeString.exitTitle.setString, style: .plain, target: self, action: #selector(exitButton))
         exitButton.tintColor = .black
         navigationItem.rightBarButtonItem = exitButton
         
@@ -56,20 +57,34 @@ class AlbumViewController: UICollectionViewController {
         dismiss(animated: true)
     }
     
+    //MARK: - fetchPhotos
     private func fetchPhotos() {
         dataFetcher.getPhotos { photoResponse in
-            guard let photo = photoResponse else { return }
-            
-            for item in photo.items {
-                let lastItemSize = item.sizes.last
-                guard let url = lastItemSize?.url else { return }
+            switch photoResponse {
+            case .success(let photoResponse):
+                guard let photo = photoResponse else { return }
                 
-                let date = item.date
-                let cell = PhotoViewModel.Cell(photoUrlString: url, date: date)
-                self.photoViewModel.cells.append(cell)
-                self.collectionView.reloadData()
+                for item in photo.items {
+                    let lastItemSize = item.sizes.last
+                    guard let url = lastItemSize?.url else { return }
+                    
+                    let date = item.date
+                    let cell = PhotoViewModel.Cell(photoUrlString: url, date: date)
+                    self.photoViewModel.cells.append(cell)
+                    self.collectionView.reloadData()
+                }
+            case .failure(_):
+                self.showAlert(LocalizeString.photosFailure.setString)
             }
         }
+    }
+    
+    private func showAlert(_ title: String) {
+        let ac = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        ac.addAction(ok)
+        
+        present(ac, animated: true)
     }
 }
 

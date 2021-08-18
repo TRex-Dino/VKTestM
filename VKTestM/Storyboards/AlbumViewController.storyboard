@@ -65,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="-44" y="71"/>
         </scene>
-        <!--PhotoVC-->
+        <!--Photo View Controller-->
         <scene sceneID="w8i-jE-B5E">
             <objects>
-                <viewController id="vne-c3-Hxi" customClass="PhotoVC" customModule="VKTestM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vne-c3-Hxi" customClass="PhotoViewController" customModule="VKTestM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SmA-H1-kQb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,6 +76,26 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qBe-XN-uDv" customClass="WebImageView" customModule="VKTestM" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="244" width="414" height="354"/>
                             </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cXz-t2-EIc">
+                                <rect key="frame" x="0.0" y="714" width="414" height="84"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6dn-rP-kYO">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="7FA-rA-qfU">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3cz-VK-3Fc">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Li-aX-a93"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -83,7 +103,11 @@
                             <constraint firstItem="qBe-XN-uDv" firstAttribute="width" secondItem="SmA-H1-kQb" secondAttribute="width" id="19D-Ao-hYk"/>
                             <constraint firstItem="qBe-XN-uDv" firstAttribute="height" secondItem="SmA-H1-kQb" secondAttribute="height" multiplier="0.42" id="7nl-2w-Edu"/>
                             <constraint firstItem="qBe-XN-uDv" firstAttribute="centerX" secondItem="SmA-H1-kQb" secondAttribute="centerX" id="D1L-UT-j5t"/>
+                            <constraint firstItem="4Li-aX-a93" firstAttribute="bottom" secondItem="cXz-t2-EIc" secondAttribute="bottom" constant="10" id="e2h-ln-VPR"/>
+                            <constraint firstItem="cXz-t2-EIc" firstAttribute="centerX" secondItem="SmA-H1-kQb" secondAttribute="centerX" id="gcz-UG-86i"/>
                             <constraint firstItem="qBe-XN-uDv" firstAttribute="centerY" secondItem="SmA-H1-kQb" secondAttribute="centerY" id="gyL-Yk-g1I"/>
+                            <constraint firstItem="cXz-t2-EIc" firstAttribute="width" secondItem="SmA-H1-kQb" secondAttribute="width" id="jcm-SG-fRN"/>
+                            <constraint firstItem="cXz-t2-EIc" firstAttribute="height" secondItem="SmA-H1-kQb" secondAttribute="height" multiplier="0.1" id="wcM-Gb-mOm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4WM-sl-u9M"/>

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol DataFetcher {
-    func getPhotos(response: @escaping (PhotosResponse?) -> Void)
+    func getPhotos(response: @escaping (Result<PhotosResponse?, Error>) -> Void)
 }
 
 struct NetworkDataFetcher: DataFetcher {
@@ -19,15 +19,14 @@ struct NetworkDataFetcher: DataFetcher {
         self.networking = networking
     }
     
-    func getPhotos(response: @escaping (PhotosResponse?) -> Void) {
+    func getPhotos(response: @escaping (Result<PhotosResponse?, Error>) -> Void) {
         let params = ["owner_id": API.ownerId, "album_id": API.albumId]
         networking.request(path: API.albumPhotos, params: params) { data, error in
             if let error = error {
-                print("Error received requesting data: \(error.localizedDescription)")
-                response(nil)
+                response(.failure(error))
             }
             let decoded = self.decodeJSON(type: AlbumResponse.self, from: data)
-            response(decoded?.response)
+            response(.success(decoded?.response))
         }
     }
     

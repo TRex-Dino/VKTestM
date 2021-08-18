@@ -39,10 +39,8 @@ class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
         VKSdk.wakeUpSession(scope) { [delegate] state, error in
             switch state {
             case .initialized:
-                print("initialized")
                 VKSdk.authorize(scope)
             case .authorized:
-                print("authorized")
                 delegate?.authServiceSignIn()
             default:
                 delegate?.authServiceSignInDidFail()
@@ -62,7 +60,6 @@ class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     }
     
     func vkSdkUserAuthorizationFailed() {
-        print(#function)
         delegate?.authServiceSignInDidFail()
     }
     

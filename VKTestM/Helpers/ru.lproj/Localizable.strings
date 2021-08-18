@@ -1,0 +1,18 @@
+
+//AuthVC
+"Login VK" = "Вход через VK";
+
+//SceneDelegate
+"Authorisation Error" = "Ошибка авторизации";
+"Sorry, try again later" = "Извините, попробуйте попытку позже";
+
+//AlbumVC
+"Error to fetch photos" = "Ошибка загрузки фото";
+"Exit" = "Выход";
+
+//PhotoVC
+"en_US" = "ru_RU";
+
+"Photo receiving Error" = "Ошибка получения изображения";
+"Your photo saved" = "Ваше изображение сохранено";
+"Error to save photo" = "Ошибка сохранения изображения";

@@ -23,7 +23,9 @@
 		0A43FD3626C9AB760052856E /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A43FD3526C9AB760052856E /* PhotoCell.swift */; };
 		0A7BE54826CBA0ED009C3A63 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7BE54726CBA0ED009C3A63 /* PhotoViewModel.swift */; };
 		0A7BE54A26CBA1AA009C3A63 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7BE54926CBA1AA009C3A63 /* WebImageView.swift */; };
-		0A942F2D26CD369800718599 /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A942F2C26CD369800718599 /* PhotoVC.swift */; };
+		0A942F2D26CD369800718599 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A942F2C26CD369800718599 /* PhotoViewController.swift */; };
+		0A942F3A26CD746900718599 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A942F3C26CD746900718599 /* Localizable.strings */; };
+		0A942F4026CD7E5F00718599 /* LocalizeString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A942F3F26CD7E5F00718599 /* LocalizeString.swift */; };
 		E679AD10FBAE98F549C91CF2 /* Pods_VKTestM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34419E31E1216A6019F5E13B /* Pods_VKTestM.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +48,10 @@
 		0A43FD3526C9AB760052856E /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		0A7BE54726CBA0ED009C3A63 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		0A7BE54926CBA1AA009C3A63 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
-		0A942F2C26CD369800718599 /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
+		0A942F2C26CD369800718599 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		0A942F3726CD742600718599 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		0A942F3B26CD746900718599 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0A942F3F26CD7E5F00718599 /* LocalizeString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeString.swift; sourceTree = "<group>"; };
 		34419E31E1216A6019F5E13B /* Pods_VKTestM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKTestM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		367AD346E1F4675B9E0AE7AA /* Pods-VKTestM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKTestM.debug.xcconfig"; path = "Target Support Files/Pods-VKTestM/Pods-VKTestM.debug.xcconfig"; sourceTree = "<group>"; };
 		39DF67D0F68B5BA8BAC1D3B8 /* Pods-VKTestM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKTestM.release.xcconfig"; path = "Target Support Files/Pods-VKTestM/Pods-VKTestM.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +94,7 @@
 				0A231BD226C8509000810744 /* Storyboards */,
 				0A231BC426C8380D00810744 /* SupprotingFiles */,
 				0A231BC526C838CB00810744 /* Resources */,
+				0A942F3E26CD7DC300718599 /* Helpers */,
 				0A231BCA26C83C7000810744 /* Services */,
 			);
 			path = VKTestM;
@@ -127,7 +133,7 @@
 				0A43FD3426C9AB590052856E /* Cell */,
 				0A231BC826C83C6200810744 /* AuthViewController.swift */,
 				0A231BCD26C84FDE00810744 /* AlbumViewController.swift */,
-				0A942F2C26CD369800718599 /* PhotoVC.swift */,
+				0A942F2C26CD369800718599 /* PhotoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -169,6 +175,15 @@
 				0A7BE54926CBA1AA009C3A63 /* WebImageView.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		0A942F3E26CD7DC300718599 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0A942F3F26CD7E5F00718599 /* LocalizeString.swift */,
+				0A942F3C26CD746900718599 /* Localizable.strings */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		593E7F1F26E4415092580A43 /* Pods */ = {
@@ -231,6 +246,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 0A231BA426C8342700810744;
 			productRefGroup = 0A231BAE26C8342700810744 /* Products */;
@@ -247,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A942F3A26CD746900718599 /* Localizable.strings in Resources */,
 				0A231BBD26C8342800810744 /* LaunchScreen.storyboard in Resources */,
 				0A231BCC26C83CB100810744 /* AuthViewController.storyboard in Resources */,
 				0A231BBA26C8342800810744 /* Assets.xcassets in Resources */,
@@ -312,10 +329,11 @@
 				0A231BD426C8562C00810744 /* NetworkService.swift in Sources */,
 				0A231BC726C83A5E00810744 /* AuthService.swift in Sources */,
 				0A43FD3626C9AB760052856E /* PhotoCell.swift in Sources */,
+				0A942F4026CD7E5F00718599 /* LocalizeString.swift in Sources */,
 				0A43FD3326C9A6130052856E /* NetworkDataFetcher.swift in Sources */,
 				0A43FD2F26C9A4FD0052856E /* AlbumResponse.swift in Sources */,
 				0A231BD626C8572400810744 /* API.swift in Sources */,
-				0A942F2D26CD369800718599 /* PhotoVC.swift in Sources */,
+				0A942F2D26CD369800718599 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,8 +344,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				0A231BBC26C8342800810744 /* Base */,
+				0A942F3726CD742600718599 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0A942F3C26CD746900718599 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A942F3B26CD746900718599 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -337,6 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -398,6 +426,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
