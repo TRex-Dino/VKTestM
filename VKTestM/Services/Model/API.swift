@@ -14,6 +14,6 @@ struct API {
     
     static let ownerId = "-128666765"
     static let albumId = "266276915"
-
+    
     static let albumPhotos = "/method/photos.get"
 }

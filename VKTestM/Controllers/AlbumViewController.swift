@@ -16,9 +16,6 @@ class AlbumViewController: UICollectionViewController {
     
     private var photoViewModel = PhotoViewModel(cells: [])
     
-    private let itemsPerRow: CGFloat = 2
-    private let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 2, right: 0)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +33,8 @@ class AlbumViewController: UICollectionViewController {
             
             photoVC.photoURL = photoViewModel.cells[item].photoUrlString
             photoVC.photoDate = photoViewModel.cells[item].date
+            
+            photoVC.photoCell = photoViewModel.cells
         }
     }
     
@@ -69,7 +68,7 @@ class AlbumViewController: UICollectionViewController {
                     guard let url = lastItemSize?.url else { return }
                     
                     let date = item.date
-                    let cell = PhotoViewModel.Cell(photoUrlString: url, date: date)
+                    let cell = Cell(photoUrlString: url, date: date)
                     self.photoViewModel.cells.append(cell)
                     self.collectionView.reloadData()
                 }
@@ -96,9 +95,13 @@ extension AlbumViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoCell
+        cell.activityIndicator.startAnimating()
         
         let cellViewModel = photoViewModel.cells[indexPath.row]
-        cell.setImage(viewModel: cellViewModel)
+        DispatchQueue.main.async {
+            cell.setImage(viewModel: cellViewModel)
+            cell.activityIndicator.stopAnimating()
+        }
         
         return cell
     }
@@ -106,6 +109,16 @@ extension AlbumViewController {
 
 //MARK: - UICollectionViewDelegateFlowLayout
 extension AlbumViewController: UICollectionViewDelegateFlowLayout {
+    private var itemsPerRow: CGFloat {
+        get {
+            return 2
+        }
+    }
+    private var sectionInsets: UIEdgeInsets {
+        get {
+            UIEdgeInsets(top: 0, left: 0, bottom: 2, right: 0)
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         

@@ -77,22 +77,36 @@
                                 <rect key="frame" x="0.0" y="244" width="414" height="354"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cXz-t2-EIc">
-                                <rect key="frame" x="0.0" y="714" width="414" height="84"/>
+                                <rect key="frame" x="0.0" y="730.5" width="414" height="67.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6dn-rP-kYO">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="2" minimumInteritemSpacing="2" id="6dn-rP-kYO">
+                                    <size key="itemSize" width="128" height="84"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="2" minY="0.0" maxX="2" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="7FA-rA-qfU">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="7FA-rA-qfU" customClass="PhotoDetailCell" customModule="VKTestM" customModuleProvider="target">
+                                        <rect key="frame" x="2" y="-8.5" width="128" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3cz-VK-3Fc">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Kxc-o0-UBF">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CI3-uz-MGs" customClass="WebImageView" customModule="VKTestM" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="84"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="CI3-uz-MGs" secondAttribute="bottom" id="45U-Oa-C6W"/>
+                                                <constraint firstItem="CI3-uz-MGs" firstAttribute="top" secondItem="Kxc-o0-UBF" secondAttribute="top" id="CgR-c6-rBJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="CI3-uz-MGs" secondAttribute="trailing" id="iTt-81-9aV"/>
+                                                <constraint firstItem="CI3-uz-MGs" firstAttribute="leading" secondItem="Kxc-o0-UBF" secondAttribute="leading" id="mmy-sA-25g"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="photoCell" destination="CI3-uz-MGs" id="ucq-24-WPp"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -107,17 +121,18 @@
                             <constraint firstItem="cXz-t2-EIc" firstAttribute="centerX" secondItem="SmA-H1-kQb" secondAttribute="centerX" id="gcz-UG-86i"/>
                             <constraint firstItem="qBe-XN-uDv" firstAttribute="centerY" secondItem="SmA-H1-kQb" secondAttribute="centerY" id="gyL-Yk-g1I"/>
                             <constraint firstItem="cXz-t2-EIc" firstAttribute="width" secondItem="SmA-H1-kQb" secondAttribute="width" id="jcm-SG-fRN"/>
-                            <constraint firstItem="cXz-t2-EIc" firstAttribute="height" secondItem="SmA-H1-kQb" secondAttribute="height" multiplier="0.1" id="wcM-Gb-mOm"/>
+                            <constraint firstItem="cXz-t2-EIc" firstAttribute="height" secondItem="SmA-H1-kQb" secondAttribute="height" multiplier="0.08" id="wcM-Gb-mOm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4WM-sl-u9M"/>
                     <connections>
                         <outlet property="photoImage" destination="qBe-XN-uDv" id="w5F-gj-dvE"/>
+                        <outlet property="photosCollectionView" destination="cXz-t2-EIc" id="0nC-NG-81s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTI-FS-ZW1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="757" y="71"/>
+            <point key="canvasLocation" x="756.52173913043487" y="70.982142857142847"/>
         </scene>
     </scenes>
     <resources>

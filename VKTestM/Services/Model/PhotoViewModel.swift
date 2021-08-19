@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct PhotoViewModel {
-    struct Cell: PhotoCellViewModel {
-        var photoUrlString: String
-        var date: Double
-    }
-    
+struct PhotoViewModel { 
     var cells: [Cell]
+}
+
+struct Cell: PhotoCellViewModel {
+    var photoUrlString: String
+    var date: Double
 }

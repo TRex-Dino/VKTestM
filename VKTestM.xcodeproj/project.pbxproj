@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A1793BE26CEA25F003CE79C /* PhotoDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1793BD26CEA25F003CE79C /* PhotoDetailCell.swift */; };
 		0A231BB126C8342700810744 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A231BB026C8342700810744 /* AppDelegate.swift */; };
 		0A231BB326C8342700810744 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A231BB226C8342700810744 /* SceneDelegate.swift */; };
 		0A231BBA26C8342800810744 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A231BB926C8342800810744 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A1793BD26CEA25F003CE79C /* PhotoDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailCell.swift; sourceTree = "<group>"; };
 		0A231BAD26C8342700810744 /* VKTestM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKTestM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A231BB026C8342700810744 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A231BB226C8342700810744 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,8 +173,9 @@
 		0A43FD3426C9AB590052856E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				0A43FD3526C9AB760052856E /* PhotoCell.swift */,
 				0A7BE54926CBA1AA009C3A63 /* WebImageView.swift */,
+				0A43FD3526C9AB760052856E /* PhotoCell.swift */,
+				0A1793BD26CEA25F003CE79C /* PhotoDetailCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				0A43FD2F26C9A4FD0052856E /* AlbumResponse.swift in Sources */,
 				0A231BD626C8572400810744 /* API.swift in Sources */,
 				0A942F2D26CD369800718599 /* PhotoViewController.swift in Sources */,
+				0A1793BE26CEA25F003CE79C /* PhotoDetailCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
